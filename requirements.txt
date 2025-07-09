@@ -1,0 +1,14 @@
+fastapi
+matplotlib
+Flask
+uvicorn[standard]
+streamlit
+pandas
+numpy
+google-play-scraper
+sentence-transformers
+transformers
+torch
+scikit-learn
+joblib
+pycountry
