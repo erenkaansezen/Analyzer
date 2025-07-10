@@ -2,6 +2,9 @@
 
 Bu proje, bir  uygulamanın Google Play’deki kullanıcı yorumlarını otomatik olarak toplayıp analiz eder. 
 
+![Streamlit Arayüzü](images/appimg1.png)
+![Streamlit Arayüzü](images/appimg2.png)
+
 ---
 
 ## Teknik Cevap
