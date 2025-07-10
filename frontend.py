@@ -44,7 +44,7 @@ if st.button("Analiz Et"):
                 """, unsafe_allow_html=True
             )
 
-            # Bar grafikleri (alt alta)
+            # Bar grafikleri
             st.markdown(
                 f"""
                 <style>
@@ -91,7 +91,7 @@ if st.button("Analiz Et"):
 
             st.markdown("---")
 
-            # Yapıcı Yorumlar
+
             st.subheader("🔧 Gelen Feedback Yorum Sayısı")
             constructive = result["constructive_comments_count"]
             feedback_perc = (constructive / total) * 100 if total else 0
@@ -106,18 +106,30 @@ if st.button("Analiz Et"):
                 unsafe_allow_html=True
             )
 
-
+ 
+            st.subheader("🚫 Tespit Edilen Sahte Yorum Sayısı")
+            fake = result["fake_comments_count"]
+            fake_perc = (fake / total) * 100 if total else 0
+            st.markdown(
+                f"""
+                <div class="bar-container">
+                    <div class="bar-fill fake" style="width: {fake_perc:.1f}%">
+                        Sahte: {fake:,}
+                    </div>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
 
             st.markdown("---")
 
-            # En Çok Yıldız Alan 100 Feedback Yorumu
+
             st.subheader("🆙 En Çok Yıldız Alan 100 Feedback Yorumu")
             df_feedback = pd.DataFrame(result["top_constructive_comments"])
             st.dataframe(df_feedback)
 
-            
-            # En Çok Yıldız Alan 100 Sahte Yorum
-            st.subheader("🚫 Tespit Edilen Sahte Yorumlardan Bağzıları")
+
+            st.subheader("🚫 Tespit Edilen Sahte Yorumlardan 100 Seçim")
             df_fake = pd.DataFrame(result["top_fake_comments"])
             st.dataframe(df_fake)
 
