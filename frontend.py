@@ -14,19 +14,17 @@ if st.button("Analiz Et"):
         if response.status_code == 200:
             result = response.json()
 
-            # Duygu sayıları
+
             counts = result["sentiment_counts"]
             pos = counts.get("POSITIVE", 0)
             neu = counts.get("NEUTRAL", 0)
             neg = counts.get("NEGATIVE", 0)
             total = pos + neu + neg
 
-            # Oranlar
             pos_perc = (pos / total) * 100 if total else 0
             neu_perc = (neu / total) * 100 if total else 0
             neg_perc = (neg / total) * 100 if total else 0
 
-            # Yorum Sayısı
             st.markdown(
                 f"""
                 <div style='
@@ -44,7 +42,6 @@ if st.button("Analiz Et"):
                 """, unsafe_allow_html=True
             )
 
-            # Bar grafikleri
             st.markdown(
                 f"""
                 <style>
@@ -134,4 +131,4 @@ if st.button("Analiz Et"):
             st.dataframe(df_fake)
 
         else:
-            st.error("❌ API hatası!")
+            st.error("API hatası!")
