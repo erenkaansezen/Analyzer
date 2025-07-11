@@ -29,7 +29,7 @@ def scrape_app_reviews(app_id: str, max_reviews: int = None) -> pd.DataFrame:
             all_reviews.extend(batch)
 
     if not all_reviews:
-        raise RuntimeError(f"⚠️ {app_id} için hiç yorum bulunamadı.")
+        raise RuntimeError(f" {app_id} için hiç yorum bulunamadı.")
     df = pd.DataFrame(all_reviews)
     df["scrape_time"] = datetime.utcnow()
 
