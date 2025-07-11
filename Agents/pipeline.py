@@ -34,8 +34,8 @@ def run_pipeline(app_id: str, max_reviews: int = None) -> dict:
 
     raw = scrape_app_reviews(app_id, max_reviews=max_reviews)
     if raw.empty:
-        raise RuntimeError(f"⚠️ {app_id} için hiç yorum bulunamadı.")
-    print(f"✅ Scrape tamam – {len(raw)} yorum")
+        raise RuntimeError(f" {app_id} için hiç yorum bulunamadı.")
+    print(f"Scrape tamam – {len(raw)} yorum")
 
 
     prep = preprocess(raw)
