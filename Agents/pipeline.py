@@ -1,5 +1,3 @@
-# pipeline.py
-
 from Agents.scraper import scrape_app_reviews
 from Agents.preprocessing import preprocess
 from Agents.sentiment import analyze_sentiment
